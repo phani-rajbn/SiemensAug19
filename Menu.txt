@@ -1,0 +1,7 @@
+﻿~~~~~~~~~~~~~~PATIENT INFO SYSTEM~~~~~~~~~~~~~~~~~~~~
+TO ADD A NEW PATIENT-------------->PRESS 1
+TO UPDATE PATIENT DETAILS--------->PRESS 2
+TO DELETE PATIENT----------------->PRESS 3
+TO FIND PATIENT BY ID------------->PRESS 4
+TO FIND PATIENT BY NAME----------->PRESS 5
+PS: ANY OTHER KEY IS CONSIDERED AS EXIT..............
