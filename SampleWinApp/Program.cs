@@ -16,7 +16,7 @@ namespace SampleWinApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PatientInfo());//This function decides the form to execute. If U want to change the form which has to start UR App, U can do this here. All Forms are objects of class derived from System.Windows.Forms.Form....
+            Application.Run(new ConnectedDB());//This function decides the form to execute. If U want to change the form which has to start UR App, U can do this here. All Forms are objects of class derived from System.Windows.Forms.Form....
         }
     }
 }
