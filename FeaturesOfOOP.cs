@@ -35,10 +35,10 @@ namespace ConsoleApp
     }
 
 
-    class ExaminationPortal
+    public class ExaminationPortal
     {
         private List<Student> students;
-        const string filename = "Students.xml";
+        const string filename = @"B:\Programs\Siemens2019\DotnetTraining\ConsoleApp\bin\Debug\Students.xml";
         public ExaminationPortal()
         {
             students = new List<Student>();
@@ -123,13 +123,35 @@ namespace ConsoleApp
                     addingStudentDetails();
                     break;
                 case "2":
+                    updatingStudentDetails();
                     break;
                 case "3":
+                    readingDetails();
                     break;
                 default:
                     return false;
             }
             return true;
+        }
+
+        private static void readingDetails()
+        {
+            var students = new ExaminationPortal().GetStudents();
+            foreach(var student in students)
+            {
+                Console.WriteLine(student.StudentName);
+                Console.WriteLine("Total Marks: " + student.TotalScore);
+                foreach(var test in student.AllTests)
+                {
+                    Console.Write("{0}\t{1}\n", test.TestName, test.Marks);
+                }
+                Console.WriteLine("------------------------------------------------------");
+            }
+        }
+
+        private static void updatingStudentDetails()
+        {
+            throw new Exception("Do it URSelf");
         }
 
         private static void addingStudentDetails()

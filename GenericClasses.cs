@@ -21,7 +21,7 @@ namespace SampleConApp
         }
     }
     //Based on Templates of Cpp, C# provides Generic Classes that can allow you to create template kind of data structures which can be applied on certain kind of data types or all the data types. 
-    class MyCollection<T> : IEnumerable<T> /*where T: struct*/
+    class MyCollection<T> : IEnumerable<T> /*where T : Employee*/
     {
         private List<T> items = new List<T>();
         public void AddNew(T item)
