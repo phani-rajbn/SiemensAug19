@@ -18,39 +18,62 @@
             </Grid.RowDefinitions>
             <StackPanel Margin="2">
                 <Label>List of Employees</Label>
-                <ListBox Name="lstNames">
-                    <ListBoxItem>Apple</ListBoxItem>
-                    <ListBoxItem>Apple</ListBoxItem>
-                    <ListBoxItem>Apple</ListBoxItem>
-                    <ListBoxItem>Apple</ListBoxItem>
+                <Button Click="OnClick">Load Employees</Button>
+                <ListBox Name="lstNames" ItemsSource="{Binding Path=Employees}" DisplayMemberPath="Empname">
                 </ListBox>
             </StackPanel>
             <TabControl Grid.Column="1">
                 <TabItem Header="Details">
-                    <StackPanel Margin="2">
+                    <StackPanel Name="stkSelected" Margin="2" DataContext="{Binding ElementName=lstNames, Path=SelectedItem}">
                         <Label>Details of the Employee</Label>
                         <WrapPanel>
                             <Label>Employee ID:</Label>
-                            <TextBox MinWidth="200"/>
+                            <TextBox Text="{Binding Path=EmpID}" MinWidth="200"/>
                         </WrapPanel>
                         <WrapPanel>
                             <Label>Employee Name:</Label>
-                            <TextBox MinWidth="200"/>
+                            <TextBox Text="{Binding Path=Empname}" MinWidth="200"/>
                         </WrapPanel>
                         <WrapPanel>
                             <Label>Employee Address:</Label>
-                            <TextBox MinWidth="200"/>
+                            <TextBox Text="{Binding Path=EmpAddress}" MinWidth="200"/>
                         </WrapPanel>
                         <WrapPanel>
                             <Label>Employee Salary:</Label>
-                            <TextBox MinWidth="200"/>
+                            <TextBox Text="{Binding Path=EmpSalary}"  MinWidth="200"/>
                         </WrapPanel>
                         <WrapPanel HorizontalAlignment="Center">
-                            <Button>Save Changes</Button>
+                            <Button Name="btnSave" Click="BtnSave_Click">Save Changes</Button>
                         </WrapPanel>
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Add New"/>
+                <TabItem Header="Add New">
+                    <Grid Name="grdNew" DataContext="{Binding Path=newEmployee}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="30" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                            Adding Details of new Employee
+                        </Label>
+                        <Label Grid.Row="1" HorizontalAlignment="Right">Employee Name</Label>
+                        <Label Grid.Row="2" HorizontalAlignment="Right">Employee Address</Label>
+                        <Label Grid.Row="3" HorizontalAlignment="Right">Employee Salary</Label>
+                        <TextBox Text="{Binding Path=Empname}" Grid.Column="1" Grid.Row="1"></TextBox>
+                        <TextBox Text="{Binding Path=EmpAddress}" Grid.Column="1" Grid.Row="2"></TextBox>
+                        <TextBox Text="{Binding Path=EmpSalary}" Grid.Column="1" Grid.Row="3"></TextBox>
+                        <WrapPanel Margin="2" HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2">
+                            <Button Name="btnAdd" Click="BtnAdd_Click">Save Changes</Button>
+                        </WrapPanel>
+                    </Grid>
+                </TabItem>
                 <TabItem Header="Delete"/>
                 <TabItem Header="About US"/>
             </TabControl>
