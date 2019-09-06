@@ -40,7 +40,12 @@ namespace SampleDll
 
         public void UpdateEmployee(EmpTable emp)
         {
-            throw new NotImplementedException("Do it urself...");
+            var context = new MyDBEntities();
+            var selected = context.EmpTables.FirstOrDefault((e) => e.EmpID == emp.EmpID);
+            selected.Empname = emp.Empname;
+            selected.EmpAddress = emp.EmpAddress;
+            selected.EmpSalary = emp.EmpSalary;
+            context.SaveChanges();
         }
     }
 }
