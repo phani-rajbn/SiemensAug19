@@ -1,0 +1,25 @@
+﻿@model List<TravelogueLib.Travelogue>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of the Places visited</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Destination</th>
+        <th>Details</th>
+        <th>options</th>
+    </tr>
+    @foreach (var t in Model)
+    {
+        <tr>
+            <td>@t.TId</td>
+            <td>@t.Destination</td>
+            <td>@t.Details</td>
+            <td>@Html.ActionLink("More", "Find", new { id=t.TId })</td>
+        </tr>
+    }
+</table>
+

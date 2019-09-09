@@ -1,0 +1,16 @@
+﻿@model TravelogueLib.Travelogue
+
+@{
+    ViewBag.Title = "AddRecord";
+}
+
+<h2>Post new Travel Blog.....</h2>
+@using (Html.BeginForm())
+{
+    <p>TravelID : @Html.EditorFor(m => m.TId)</p>
+    <p>Travel Destination : @Html.EditorFor(m => m.Destination)</p>
+    <p>Details : @Html.EditorFor(m => m.Details)</p>
+    <p>No of Days : @Html.EditorFor(m => m.NoOfDays)</p>
+    <p>Date : @Html.EditorFor(m => m.TravelDate)</p>
+    <input type="submit" value="Post"/>
+}

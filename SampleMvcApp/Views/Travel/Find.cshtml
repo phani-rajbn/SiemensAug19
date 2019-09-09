@@ -1,0 +1,19 @@
+﻿@model TravelogueLib.Travelogue
+
+@{
+                /**/
+
+                ViewBag.Title = "Find";
+}
+
+<h2>More Details of @Model.Destination</h2>
+@using (Html.BeginForm())
+{
+    @*@Html.EditorForModel();*@
+<p>TravelID : @Html.DisplayFor(m => m.TId)@Html.HiddenFor(m=>m.TId)</p>
+    <p>Travel Destination : @Html.EditorFor(m => m.Destination)</p>
+    <p>Details : @Html.EditorFor(m => m.Details)</p>
+    <p>No of Days : @Html.EditorFor(m => m.NoOfDays)</p>
+    <p>Date : @Html.EditorFor(m => m.TravelDate)</p>
+    <input type="submit" value="Save changes" />
+}
