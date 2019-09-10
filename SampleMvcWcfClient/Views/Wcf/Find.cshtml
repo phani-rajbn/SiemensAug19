@@ -1,0 +1,15 @@
+﻿@model SampleMvcWcfClient.myServices.TravelInfo
+
+@{
+    ViewBag.Title = "Find";
+}
+
+<h2>Details of the trip to @Model.Destination</h2>
+<hr/>
+<div>
+    <h2>@Model.Destination</h2>
+    <p>@Model.Description</p>
+    <hr/>
+    <p>Duration: @Model.NoOfDays</p>
+</div>
+

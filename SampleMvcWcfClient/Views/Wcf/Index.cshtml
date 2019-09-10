@@ -1,0 +1,23 @@
+﻿@model SampleMvcWcfClient.myServices.TravelInfo[]
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Travels </h2>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Place</th>
+        <th>Date of Travel</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var tr in Model)
+    {
+        <tr>
+            <td>@tr.Destination</td>
+            <td>@tr.DateOfTravel.ToString("dd-MMM-yyyy")</td>
+            <td>@Html.ActionLink("Details", "Find", new { id = tr.TravelId}) </td>
+        </tr>
+    }
+</table> 
+
